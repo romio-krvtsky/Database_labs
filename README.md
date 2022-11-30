@@ -1,2 +1,2 @@
-# Database_labs
+# Databases_labs
 Barbershop project.
