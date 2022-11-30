@@ -1,8 +1,8 @@
 CREATE
-DATABASE BarbershopDB;
+    DATABASE BarbershopDB;
 
 USE
-BarbershopDB;
+    BarbershopDB;
 
 CREATE TABLE user
 (
@@ -74,11 +74,11 @@ CREATE TABLE services
     CONSTRAINT CHK_service CHECK (price >= 0 AND duration > 0)
 );
 
-CREATE TABLE services_barbers
+CREATE TABLE services_in_barbershops
 (
-    id         SERIAL PRIMARY KEY,
-    barber_id  INT NOT NULL REFERENCES barber (id),
-    service_id INT NOT NULL REFERENCES services (id)
+    id             SERIAL PRIMARY KEY,
+    barbershops_id INT NOT NULL REFERENCES barbershops (id),
+    service_id     INT NOT NULL REFERENCES services (id)
 );
 
 CREATE TABLE application
