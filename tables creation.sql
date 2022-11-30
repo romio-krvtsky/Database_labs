@@ -88,14 +88,14 @@ CREATE TABLE application
     status_seen      BOOLEAN DEFAULT FALSE,
     status_confirmed BOOLEAN DEFAULT FALSE,
     client_id        INT NOT NULL REFERENCES clients (id),
-    barber_id        INT NOT NULL REFERENCES barber (id)
+    barber_id        INT NULL REFERENCES barber (id),
+    time           TIME       NOT NULL
 );
 
 CREATE TABLE orders
 (
     id             SERIAL PRIMARY KEY,
     application_id INT UNIQUE NOT NULL REFERENCES application (id),
-    service_id     INT        NOT NULL REFERENCES services (id),
-    time           TIME       NOT NULL
+    service_id     INT        NOT NULL REFERENCES services (id)
 );
 
