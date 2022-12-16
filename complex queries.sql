@@ -22,7 +22,7 @@ FROM admin
          JOIN user ON admin.user_id = user.id
 ORDER BY barbershops.id;
 
-SELECT clients.name, application.time, barber.name, barbershops.address
+SELECT clients.name as cln, application.time, barber.name as brb, barbershops.address
 FROM application
          LEFT JOIN barber ON application.barber_id = barber.id
          JOIN clients ON application.client_id = clients.id
@@ -65,7 +65,3 @@ FROM barber
         JOIN clients ON application.client_id = clients.id
 GROUP BY barber.name
 ORDER BY cnt_clients DESC;
-
-
-
-
