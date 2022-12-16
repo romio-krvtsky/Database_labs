@@ -1,0 +1,19 @@
+{% extends 'barbershop/base.html' %}
+{% load static %}
+
+{% block content %}
+    <h2>In our barbershop we have the following services:</h2>
+    <hr>
+    {% for i in data %}
+        <h3 style="margin-left: 30px">{{ i.title }} - {{ i.price }} BYN ({{ i.duration }} min)</h3>
+    {% endfor %}
+    <hr>
+
+    <a class="btn btn-primary" href="{% url 'add_service' %}" role="button">NEW SERVICE</a>
+    <a class="btn btn-primary" href="{% url 'delete_service' %}" role="button">DELETE SERVICE</a>
+
+
+    <a class="btn btn-primary" href="{% url 'info' %}" role="button">INFO</a>
+
+
+{% endblock %}

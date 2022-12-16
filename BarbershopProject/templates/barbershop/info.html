@@ -1,0 +1,13 @@
+{% extends 'barbershop/base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <h2>INFO</h2>
+    <hr>
+    {% for i in data %}
+        <h3 style="margin-left: 30px">{{ i.cln }} - {{ i.time }} - {{ i.brb }} - {{ i.address }} </h3>
+    {% endfor %}
+    <hr>
+
+{% endblock %}
